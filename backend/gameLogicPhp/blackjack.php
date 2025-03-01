@@ -44,12 +44,9 @@ while($index < (6 * 52)){
             $value = (int)shell_exec($command);
             array_push($pCards, $card);
             $index++;
-        }
-        elseif($input == "stay"){
+        }elseif($input == "stay"){
             break;
         }
-        
-        
     }
     if($value > 21){
         echo "bust\n";
