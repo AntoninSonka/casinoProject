@@ -29,21 +29,22 @@ class Database {
         catch (Exception $e){
             echo "Error code: " . $e->getMessage();
         }
-        public function __destruct(){
-            if($this->conn){
-                $this->conn->close();
-            }
+    }
+    public function __destruct(){
+        if($this->conn){
+            $this->conn->close();
         }
     }
+    private $conn;
 }//konec db class
 
 try{
-    $db = new Database("127.0.0.1:3306", "michaelkudrnac", "programovani20242025@", "michaelkudrnac");
-    $result = $db->query("Select * from user_test");
+    $db = new Database("127.0.0.1:3306", "antoninsonka", "JoHingo6Oo", "antoninsonka");
+    $result = $db->query("Select * from user");
     if($result & $result->num_rows>0){
         while($row = $result->fetch_assoc()){
-            echo "User: " . $row["name"];
-            echo "<br>";
+            //echo "User: " . $row["name"];
+            //echo "<br>";
         }
     }
 }
